@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,body,app-root{ /* Configuração global para tela 100% em largura e altura*/
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    background: linear-gradient(to bottom right, #009fff, #008033);
+}
