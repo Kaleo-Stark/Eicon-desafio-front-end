@@ -4,6 +4,6 @@
     </div>
 
     <div class="lista-horizontal-corpo">
-      <app-card-filme *ngFor="let filme of listaFilmes"></app-card-filme>
+      <app-card-filme [dadosFilme]="dadosFilme" *ngFor="let dadosFilme of listaFilmes"></app-card-filme>
     </div>
 </div>
