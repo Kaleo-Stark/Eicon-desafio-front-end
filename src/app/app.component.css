@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 800px;
     height: 40px;
@@ -45,12 +46,53 @@
 
 .input-pesquisa{
     height: 25px;
-    border-radius: 13px;
+    border-radius: 13px 0px 0px 13px;
     border: none;
-    width: 85%;
+    width: 70%;
     max-width: 600px;
     text-align: center;
     background-color: aliceblue;
+    margin-top: 5px;
+}
+
+.botao-pesquisar{
+    width: 15%;
+    margin-top: 5px;
+    height: 27px;
+    border-radius: 0px 13px 13px 0px;
+    border: none;
+    border-left: solid 1px gray;
+}
+
+.caixa-sugestao{
+    width: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: aliceblue;
+    position: relative;
+    margin-top: 0px;
+    border-radius: 1px 0px 6px 6px;
+    z-index: 1;
+}
+
+@media (max-width: 767px){
+    .caixa-sugestao{
+        width: 80%;
+    }
+}
+
+.item-sugestao{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    border: solid gray;
+    border-width: 1px 0px 0px 0px;
+    font-family: sans-serif;
+}
+
+.item-sugestao h6{
+    margin-left: 10px;
 }
 
 .corpo{

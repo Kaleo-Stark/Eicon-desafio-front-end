@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilmesPaginaPrincipalService } from './servicos/filmes-pagina-principal.service';
+import { PesquisaFilmeService } from './servicos/pesquisa-filme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,10 @@ import { FilmesPaginaPrincipalService } from './servicos/filmes-pagina-principal
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Eicon-desafio-front-end';
 
-  constructor(private servicoFilmes : FilmesPaginaPrincipalService){
+  public textoFilmeProcurado: String = "";
+
+  constructor(private servicoFilmes : FilmesPaginaPrincipalService, private pesquisa : PesquisaFilmeService){
     servicoFilmes.buscarListaFilmes('/popular').then((retorno)=>{
       if(retorno['results'].length > 0){
         this.filmesPopulares = retorno['results'];
@@ -30,9 +32,23 @@ export class AppComponent {
     });
   }
 
+  pesquisarFilme(filmeProcurado){
+    if(filmeProcurado){
+      this.pesquisa.pesquisarFilme(filmeProcurado).then((retorno)=>{
+        if(retorno){  
+          this.sugestaoDeFilme = retorno['results'];
+        }else {
+          this.sugestaoDeFilme = [];
+        }
+      })
+    }else {
+      this.sugestaoDeFilme = [];
+    }
+  }
+
+  public sugestaoDeFilme = [];
 
   public filmesPopulares = [];
   public filmesEmCartaz = [];
   public proximosLancamentos = [];
-
 }

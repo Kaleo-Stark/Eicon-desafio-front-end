@@ -14,3 +14,7 @@ html,body,app-root{ /* Configuração global para tela 100% em largura e altura*
     font-family: logo;
     src: url("./assets/fonteLogo.ttf");
 }
+
+*:focus {
+    outline: none;
+}

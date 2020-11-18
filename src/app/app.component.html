@@ -5,7 +5,17 @@
     </div>
 
     <div class="container-input-pesquisa">
-      <input class="input-pesquisa" type="text" placeholder="Pesquise aqui um filme, serie ou pessoa ;)">
+      <input class="input-pesquisa" type="text" [(ngModel)]="textoFilmeProcurado" 
+      ontouchend="pesquisarFilme(textoFilmeProcurado)"
+      (keyup)="pesquisarFilme(textoFilmeProcurado)" placeholder="Pesquise aqui um filme, serie ou pessoa ;)">
+      
+      <button class="botao-pesquisar">Buscar</button>
+
+      <div class="caixa-sugestao">
+        <div class="item-sugestao" *ngFor="let filme of sugestaoDeFilme">
+         <h6>{{filme.title}}</h6>
+        </div>
+      </div>
     </div>
   </div>
 
