@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FilmesPaginaPrincipalService } from './servicos/filmes-pagina-principal.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Eicon-desafio-front-end';
 
+  constructor(private servicoFilmes : FilmesPaginaPrincipalService){
+    servicoFilmes.filmesPopulares().then((retorno)=>{
+      if(retorno['results'].length > 0){
+        this.filmesPopulares = retorno['results'];
+      }
+    })
+  }
 
-  public filmesPopulares = [{},{},{},{},{}]
+
+  public filmesPopulares = [];
+  public filmesNovos = [{},{},{},{},{}]
 
 }

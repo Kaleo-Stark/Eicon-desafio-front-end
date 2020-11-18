@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CardFilmeComponent } from './componentes/card-filme/card-filme.component';
 import { ListaHorizontalFilmesComponent } from './componentes/lista-horizontal-filmes/lista-horizontal-filmes.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { ListaHorizontalFilmesComponent } from './componentes/lista-horizontal-f
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
