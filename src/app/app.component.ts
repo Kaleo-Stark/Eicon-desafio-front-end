@@ -13,6 +13,7 @@ export class AppComponent {
   @ViewChild(DetalhesFilmeComponent) detalhes: DetalhesFilmeComponent;
 
   public textoFilmeProcurado: String = "";
+  public apiImagem = "//image.tmdb.org/t/p/w220_and_h330_face";
 
   constructor(private pesquisa : PesquisaFilmeService, private router: Router){}
 
@@ -21,6 +22,7 @@ export class AppComponent {
       this.pesquisa.pesquisarFilme(filmeProcurado).then((retorno)=>{
         if(retorno){  
           this.sugestaoDeFilme = retorno['results'];
+          console.log(retorno)
         }else {
           this.sugestaoDeFilme = [];
         }

@@ -13,6 +13,7 @@
         <div class="item-sugestao" (click)="limparPesquisa()"
           *ngFor="let filme of sugestaoDeFilme" 
           routerLink="/detalhes-filme/{{filme.id}}">
+          <img class="imagem-sugestao" src="{{(filme.poster_path)? (apiImagem+filme.poster_path) : '../assets/sem-imagem.jpg'}}">
           <h6>{{filme.title}}</h6>
         </div>
       </div>
