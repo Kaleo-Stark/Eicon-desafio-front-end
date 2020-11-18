@@ -6,5 +6,6 @@ html,body,app-root{ /* Configuração global para tela 100% em largura e altura*
     padding: 0%;
     margin: 0%;
     display: flex;
-    background: linear-gradient(to bottom right, #009fff, #008033);
+    background-color: black;
+    /*background: linear-gradient(to bottom right, #009fff, #008033);*/
 }

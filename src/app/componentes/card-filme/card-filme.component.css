@@ -15,7 +15,7 @@
     background-color: aliceblue;
     padding-top: 23px;
     border-radius: 15px;
-    box-shadow: black -3px 3px 14px;
+    box-shadow: black 3px 3px 5px -1px;
 }
 
 .container-imagem{
