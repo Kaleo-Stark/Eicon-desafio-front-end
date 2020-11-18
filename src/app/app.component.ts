@@ -10,15 +10,29 @@ export class AppComponent {
   title = 'Eicon-desafio-front-end';
 
   constructor(private servicoFilmes : FilmesPaginaPrincipalService){
-    servicoFilmes.filmesPopulares().then((retorno)=>{
+    servicoFilmes.buscarListaFilmes('/popular').then((retorno)=>{
       if(retorno['results'].length > 0){
         this.filmesPopulares = retorno['results'];
       }
-    })
+    });
+
+    servicoFilmes.buscarListaFilmes('/now_playing').then((retorno)=>{
+      if(retorno['results'].length > 0){
+        this.filmesEmCartaz = retorno['results'];
+      }
+    });
+
+    servicoFilmes.buscarListaFilmes('/upcoming').then((retorno)=>{
+      if(retorno['results'].length > 0){
+        this.proximosLancamentos = retorno['results'];
+        console.log(retorno)
+      }
+    });
   }
 
 
   public filmesPopulares = [];
-  public filmesNovos = [{},{},{},{},{}]
+  public filmesEmCartaz = [];
+  public proximosLancamentos = [];
 
 }

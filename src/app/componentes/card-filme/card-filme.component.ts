@@ -14,6 +14,8 @@ export class CardFilmeComponent implements OnInit {
     poster_path: ''
   }; 
 
+  public apiImagem = "//image.tmdb.org/t/p/w220_and_h330_face";
+
   constructor() { }
 
   ngOnInit(): void {

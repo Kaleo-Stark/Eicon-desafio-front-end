@@ -1,6 +1,6 @@
 <div class="item-filme">
     <div class="container-imagem">
-      <img class="imagem" src="//image.tmdb.org/t/p/w220_and_h330_face{{dadosFilme.poster_path}}" alt="">
+      <img class="imagem" src="{{(dadosFilme.poster_path)? (apiImagem+dadosFilme.poster_path) : '../../../assets/sem-imagem.jpg'}}">
 
       <div class="porcentagem">
         a<br>v<br>a<br>l<br>i<br>a<br>ç<br>ã<br>o

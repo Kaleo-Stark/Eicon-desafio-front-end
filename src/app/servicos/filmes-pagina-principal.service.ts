@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 
 @Injectable({
@@ -8,18 +8,22 @@ import { environment } from './../../environments/environment';
 
 export class FilmesPaginaPrincipalService {
 
-  public headers = { "Content-Type":"application/json; charset=UTF-8" }
+  private headers = { "Content-Type":"application/json; charset=UTF-8" }
 
-  constructor(private http: HttpClient) { 
-    //this.headers = this.headers.set("Content-Type","application/json; charset=UTF-8");
-  }
+  
 
-  filmesPopulares = async () => {
+  constructor(private http: HttpClient) { }
+
+  buscarListaFilmes = async (tipo:String) => {
     try{
-      return await this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${environment.apiKey}&language=pt-BR&page=1`, {headers: this.headers})
+      return await this.http.get(this.linkApi(tipo), {headers: this.headers})
       .toPromise();
     }catch(error){
       console.log(error);
     }
+  }
+
+  linkApi(tipoFilme){
+    return `https://api.themoviedb.org/3/movie${tipoFilme}?api_key=${environment.apiKey}&language=pt-BR&page=1&region=BR`
   }
 }
