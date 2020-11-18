@@ -19,7 +19,7 @@ export class PesquisaFilmeService {
     }
   }
 
-  linkApi(nome){
+  private linkApi(nome){
     return `https://api.themoviedb.org/3/search/movie?api_key=${environment.apiKey}&language=pt-BR&query=${nome}&page=1&include_adult=false&region=BR`
   }
 }

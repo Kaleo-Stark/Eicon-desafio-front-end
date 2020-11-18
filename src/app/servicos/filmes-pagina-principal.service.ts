@@ -21,7 +21,7 @@ export class FilmesPaginaPrincipalService {
     }
   }
 
-  linkApi(tipoFilme){
+  private linkApi(tipoFilme){
     return `https://api.themoviedb.org/3/movie${tipoFilme}?api_key=${environment.apiKey}&language=pt-BR&page=1&region=BR`
   }
 }

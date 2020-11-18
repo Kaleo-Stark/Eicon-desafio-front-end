@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FilmesPaginaPrincipalService } from './servicos/filmes-pagina-principal.service';
+import { Component, ViewChild } from '@angular/core';
 import { PesquisaFilmeService } from './servicos/pesquisa-filme.service';
+import { Router } from '@angular/router';
+import { DetalhesFilmeComponent } from './paginas/detalhes-filme/detalhes-filme.component';
 
 @Component({
   selector: 'app-root',
@@ -9,28 +10,11 @@ import { PesquisaFilmeService } from './servicos/pesquisa-filme.service';
 })
 export class AppComponent {
 
+  @ViewChild(DetalhesFilmeComponent) detalhes: DetalhesFilmeComponent;
+
   public textoFilmeProcurado: String = "";
 
-  constructor(private servicoFilmes : FilmesPaginaPrincipalService, private pesquisa : PesquisaFilmeService){
-    servicoFilmes.buscarListaFilmes('/popular').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.filmesPopulares = retorno['results'];
-      }
-    });
-
-    servicoFilmes.buscarListaFilmes('/now_playing').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.filmesEmCartaz = retorno['results'];
-      }
-    });
-
-    servicoFilmes.buscarListaFilmes('/upcoming').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.proximosLancamentos = retorno['results'];
-        console.log(retorno)
-      }
-    });
-  }
+  constructor(private pesquisa : PesquisaFilmeService, private router: Router){}
 
   pesquisarFilme(filmeProcurado){
     if(filmeProcurado){
@@ -46,9 +30,9 @@ export class AppComponent {
     }
   }
 
-  public sugestaoDeFilme = [];
+  limparPesquisa(){
+    this.pesquisarFilme(this.textoFilmeProcurado = '')
+  }
 
-  public filmesPopulares = [];
-  public filmesEmCartaz = [];
-  public proximosLancamentos = [];
+  public sugestaoDeFilme = [];
 }

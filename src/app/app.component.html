@@ -1,35 +1,25 @@
 <div class="container-principal">
   <div class="topo">
     <div class="container-logo">
-        Sobre Filmes .com
+        <a routerLink="/pagina-principal">Sobre Filmes .com</a> 
     </div>
 
     <div class="container-input-pesquisa">
       <input class="input-pesquisa" type="text" [(ngModel)]="textoFilmeProcurado" 
       ontouchend="pesquisarFilme(textoFilmeProcurado)"
-      (keyup)="pesquisarFilme(textoFilmeProcurado)" placeholder="Pesquise aqui um filme, serie ou pessoa ;)">
-      
-      <button class="botao-pesquisar">Buscar</button>
+      (keyup)="pesquisarFilme(textoFilmeProcurado)" placeholder="Pesquise aqui um filme ou serie ;)">
 
       <div class="caixa-sugestao">
-        <div class="item-sugestao" *ngFor="let filme of sugestaoDeFilme">
-         <h6>{{filme.title}}</h6>
+        <div class="item-sugestao" (click)="limparPesquisa()"
+          *ngFor="let filme of sugestaoDeFilme" 
+          routerLink="/detalhes-filme/{{filme.id}}">
+          <h6>{{filme.title}}</h6>
         </div>
       </div>
     </div>
   </div>
 
   <div class="corpo">
-    <app-lista-horizontal-filmes 
-      titulo='Em cartaz'  [listaFilmes]="filmesEmCartaz" class="item-lista-corpo">
-    </app-lista-horizontal-filmes>
-    
-    <app-lista-horizontal-filmes 
-      titulo='Populares' [listaFilmes]="filmesPopulares" class="item-lista-corpo">
-    </app-lista-horizontal-filmes>
-
-    <app-lista-horizontal-filmes 
-      titulo='Próximos lançamentos' [listaFilmes]="proximosLancamentos" class="item-lista-corpo">
-    </app-lista-horizontal-filmes>
+    <router-outlet></router-outlet>
   </div>
 </div>

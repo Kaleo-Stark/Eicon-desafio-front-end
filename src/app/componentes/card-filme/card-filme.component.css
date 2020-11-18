@@ -32,7 +32,7 @@
 }
 
 .porcentagem{
-    background: linear-gradient( #4c4c4c 50%, green 50%);
+    /*background: linear-gradient( #4c4c4c 50%, green 50%);*/
     border-radius: 13px;
     width: 13px;
     color: aliceblue;
@@ -44,7 +44,7 @@
 }
 
 .container-informacao-basica{
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
     flex-direction: column ;

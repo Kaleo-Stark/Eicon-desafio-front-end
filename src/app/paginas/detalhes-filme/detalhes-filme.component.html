@@ -1,0 +1,44 @@
+
+<div class="container-geral">
+    <div class="container-titulo">
+        <h2>Visão geral</h2>
+    </div>
+
+    <div class="container-corpo">
+        <img src="{{(detalhesFilme.poster_path)? (apiImagem+detalhesFilme.poster_path) : '../../../assets/sem-imagem.jpg'}}" class="imagem-capa">
+        
+        <div class="container-texto">
+            <div class="titulo">
+                <h1>Titulo: {{detalhesFilme.title}}</h1>
+                <h2>Titulo original: {{detalhesFilme.original_title}}</h2>
+            </div>
+            
+            <div>
+                <h3>Genero(s):  <b *ngFor="let genero of detalhesFilme.genres"> {{ genero.name+',' }} </b></h3>
+                <h3>Lançamento: {{detalhesFilme.release_date.split('-')[2]+'/'+detalhesFilme.release_date.split('-')[1]+'/'+detalhesFilme.release_date.split('-')[0]}}</h3>
+                <h3>Sinopse:</h3>
+                <p>{{detalhesFilme.overview}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="">
+    <div class="container-geral">
+        <div class="container-titulo">
+            <h2>Elenco</h2>
+        </div>
+    
+        <div class="container-corpo lista-elenco">
+           <div *ngFor="let pessoa of elenco" class="card-elenco">
+               <img class="imagem-elenco" src="{{apiImagem+pessoa.profile_path}}">
+               {{pessoa.name}} <br>
+               Como: {{pessoa.character}}
+           </div>
+        </div>
+    </div>
+</div>
+
+<app-lista-horizontal-filmes 
+    titulo='Recomendados' [listaFilmes]="filmesRecomendados" *ngIf="filmesRecomendados.length > 0" class="item-lista-corpo">
+</app-lista-horizontal-filmes>

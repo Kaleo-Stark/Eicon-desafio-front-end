@@ -8,12 +8,16 @@ import { ListaHorizontalFilmesComponent } from './componentes/lista-horizontal-f
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-principal.component';
+import { DetalhesFilmeComponent } from './paginas/detalhes-filme/detalhes-filme.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardFilmeComponent,
-    ListaHorizontalFilmesComponent
+    ListaHorizontalFilmesComponent,
+    PaginaPrincipalComponent,
+    DetalhesFilmeComponent
   ],
   imports: [
     BrowserModule,

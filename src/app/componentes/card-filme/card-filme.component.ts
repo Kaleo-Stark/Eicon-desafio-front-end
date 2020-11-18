@@ -11,7 +11,8 @@ export class CardFilmeComponent implements OnInit {
     id: 0,
     title: '',
     release_date: '',
-    poster_path: ''
+    poster_path: '',
+    vote_average: 0
   }; 
 
   public apiImagem = "//image.tmdb.org/t/p/w220_and_h330_face";
@@ -20,9 +21,4 @@ export class CardFilmeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  public formatarData = (data) => {
-    return data;
-  }
-
 }
