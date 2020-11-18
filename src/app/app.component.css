@@ -71,40 +71,12 @@
     }
 }
 
-
-
-
-/*Lista horizontal*/
-.lista-horizontal-container{
+.item-lista-corpo{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 35px;
-}
-.lista-horizontal-container-titulo{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    background-color: aliceblue;
-    border-bottom: solid 1px gray;
 }
 
-.lista-horizontal-container-titulo h2{
-    margin: 0px 0px 0px 32px;
-    font-family: logo;
-    font-size: 30px;
-}
 
-.lista-horizontal-corpo{
-    width: 100%;
-    padding-bottom: 35px;
-    display: flex;
-    flex-direction: row;
-    overflow: auto;
-    background-color: #c1c1c1;
-}
+
 
 .rodape{
     width: 100%;

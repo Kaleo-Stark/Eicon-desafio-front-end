@@ -9,3 +9,8 @@ html,body,app-root{ /* Configuração global para tela 100% em largura e altura*
     background-color: black;
     /*background: linear-gradient(to bottom right, #009fff, #008033);*/
 }
+
+@font-face{
+    font-family: logo;
+    src: url("./assets/fonteLogo.ttf");
+}

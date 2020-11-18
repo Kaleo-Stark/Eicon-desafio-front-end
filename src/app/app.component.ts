@@ -9,5 +9,6 @@ export class AppComponent {
   title = 'Eicon-desafio-front-end';
 
 
-  public filmes = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+  public filmesPopulares = [{},{},{},{},{}]
+
 }

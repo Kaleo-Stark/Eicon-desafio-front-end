@@ -10,50 +10,7 @@
   </div>
 
   <div class="corpo">
-
-
-
-    <div class="lista-horizontal-container">
-      <div class="lista-horizontal-container-titulo">
-        <h2>Filmes populares</h2>
-      </div>
-      <div class="lista-horizontal-corpo">
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-      </div>
-    </div>
-
-    <div class="lista-horizontal-container">
-      <div class="lista-horizontal-container-titulo">
-        <h2>Filmes populares</h2>
-      </div>
-      <div class="lista-horizontal-corpo">
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-      </div>
-    </div>
-
-    <div class="lista-horizontal-container">
-      <div class="lista-horizontal-container-titulo">
-        <h2>Filmes populares</h2>
-      </div>
-      <div class="lista-horizontal-corpo">
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-        <app-card-filme></app-card-filme>
-      </div>
-    </div>
-
-
-    <!--<app-card-filme></app-card-filme>-->
-
-    <div class="rodape">
-
-    </div>
+    <app-lista-horizontal-filmes titulo='Populares' [listaFilmes]="filmesPopulares" class="item-lista-corpo"></app-lista-horizontal-filmes>
+    <app-lista-horizontal-filmes titulo='Novos' class="item-lista-corpo"></app-lista-horizontal-filmes>
   </div>
 </div>
