@@ -12,7 +12,7 @@ export class AppComponent {
   
   public textoFilmeProcurado: String = "";
   
-  public sugestaoDeFilme: Array<object> = [];
+  public sugestaoDeFilme = [];
 
   constructor(private servicoPesquisa : PesquisaFilmeService){}
 

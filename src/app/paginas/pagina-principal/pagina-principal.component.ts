@@ -7,31 +7,25 @@ import { FilmesPaginaPrincipalService } from '../../servicos/filmes-pagina-princ
   styleUrls: ['./pagina-principal.component.css']
 })
 export class PaginaPrincipalComponent implements OnInit {
-
   public filmesPopulares = [];
+
   public filmesEmCartaz = [];
+  
   public proximosLancamentos = [];
 
   constructor(private servicoFilmes : FilmesPaginaPrincipalService) {
-    servicoFilmes.buscarListaFilmes('/popular').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.filmesPopulares = retorno['results'];
-      }
+    this.servicoFilmes.buscarListaFilmes('/popular').then((retorno)=>{
+      if(retorno['results'].length > 0){ this.filmesPopulares = retorno['results'] }
     });
 
-    servicoFilmes.buscarListaFilmes('/now_playing').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.filmesEmCartaz = retorno['results'];
-      }
+    this.servicoFilmes.buscarListaFilmes('/now_playing').then((retorno)=>{
+      if(retorno['results'].length > 0){ this.filmesEmCartaz = retorno['results'] }
     });
 
-    servicoFilmes.buscarListaFilmes('/upcoming').then((retorno)=>{
-      if(retorno['results'].length > 0){
-        this.proximosLancamentos = retorno['results'];
-      }
+    this.servicoFilmes.buscarListaFilmes('/upcoming').then((retorno)=>{
+      if(retorno['results'].length > 0){ this.proximosLancamentos = retorno['results'] }
     });
   }
 
   ngOnInit(): void { }
-
 }
