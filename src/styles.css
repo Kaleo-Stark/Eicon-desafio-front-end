@@ -18,3 +18,20 @@ html,body,app-root{ /* Configuração global para tela 100% em largura e altura*
 *:focus {
     outline: none;
 }
+
+::-webkit-scrollbar{ -webkit-appearance: none; }
+
+::-webkit-scrollbar:vertical{ width: 5px; }
+
+::-webkit-scrollbar:horizontal{ height: 8px; }
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #636363, #c1c1c1);
+    border-radius: 1px;
+    border: none;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 0px;
+    background-color: #e2e2e2;
+}

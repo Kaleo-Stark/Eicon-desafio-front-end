@@ -1,19 +1,17 @@
 <div class="container-principal">
-  <div class="topo">
+  <div class="container-topo">
     <div class="container-logo">
         <a routerLink="/pagina-principal">Sobre Filmes .com</a> 
     </div>
 
     <div class="container-input-pesquisa">
-      <input class="input-pesquisa" type="text" [(ngModel)]="textoFilmeProcurado" 
-      ontouchend="pesquisarFilme(textoFilmeProcurado)"
+      <input type="text" class="input-pesquisa" [(ngModel)]="textoFilmeProcurado" ontouchend="pesquisarFilme(textoFilmeProcurado)"
       (keyup)="pesquisarFilme(textoFilmeProcurado)" placeholder="Pesquise aqui um filme ou serie ;)">
 
       <div class="caixa-sugestao">
-        <div class="item-sugestao" (click)="limparPesquisa()"
-          *ngFor="let filme of sugestaoDeFilme" 
-          routerLink="/detalhes-filme/{{filme.id}}">
+        <div class="item-sugestao" (click)="limparPesquisa()" *ngFor="let filme of sugestaoDeFilme" routerLink="/detalhes-filme/{{filme.id}}">
           <img class="imagem-sugestao" src="{{(filme.poster_path)? (apiImagem+filme.poster_path) : '../assets/sem-imagem.jpg'}}">
+          
           <h6>{{filme.title}}</h6>
         </div>
       </div>

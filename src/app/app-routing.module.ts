@@ -5,7 +5,7 @@ import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-prin
 import { DetalhesFilmeComponent } from './paginas/detalhes-filme/detalhes-filme.component';
 
 const routes: Routes = [
-  { path: '', component: PaginaPrincipalComponent },
+  { path: '', redirectTo: '/pagina-principal', pathMatch: 'full'},
   { path: 'pagina-principal', component: PaginaPrincipalComponent },
   { path: 'detalhes-filme/:idFilme', component: DetalhesFilmeComponent }
 ];
