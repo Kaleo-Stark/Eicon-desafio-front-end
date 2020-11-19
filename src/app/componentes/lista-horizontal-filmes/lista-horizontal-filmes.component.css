@@ -24,6 +24,6 @@
     padding: 30px 0px 30px 0px;
     display: flex;
     flex-direction: row;
-    overflow: auto;
+    overflow-x: scroll;
     background-color: #c1c1c1;
 }

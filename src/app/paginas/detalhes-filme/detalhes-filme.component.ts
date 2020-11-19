@@ -46,5 +46,13 @@ export class DetalhesFilmeComponent implements OnInit {
     this.detalhesFilmeApi.elenco(idFilme).then((retorno:any)=>{
       this.elenco = retorno['cast'];
     });
+
+    this.escrollarTopo();
+  }
+
+  escrollarTopo(){
+    let principal = document.querySelector('.container-principal');
+  
+    if(principal){ principal.scrollTop = 0 }
   }
 }
