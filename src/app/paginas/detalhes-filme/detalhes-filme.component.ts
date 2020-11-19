@@ -10,7 +10,9 @@ import { DetalhesFilmeService } from '../../servicos/detalhes-filme.service';
 export class DetalhesFilmeComponent implements OnInit {
 
   public idFilme;
+
   public apiImagem = "//image.tmdb.org/t/p/w220_and_h330_face";
+  
   public detalhesFilme = {
     poster_path: '',
     original_title: '',
@@ -21,6 +23,7 @@ export class DetalhesFilmeComponent implements OnInit {
   };
 
   public filmesRecomendados = [];
+
   public elenco = [];
 
   constructor(private activatedRoute: ActivatedRoute, private detalhesFilmeApi: DetalhesFilmeService) { }
@@ -34,17 +37,14 @@ export class DetalhesFilmeComponent implements OnInit {
   buscarDetalhesFilme(idFilme){
     this.detalhesFilmeApi.geral(idFilme).then((retorno:any)=>{
       this.detalhesFilme = retorno;
-      console.log(retorno);
     });
 
     this.detalhesFilmeApi.recomendacoes(idFilme).then((retorno:any)=>{
       this.filmesRecomendados = retorno['results'];
-      console.log(retorno);
     });
 
     this.detalhesFilmeApi.elenco(idFilme).then((retorno:any)=>{
       this.elenco = retorno['cast'];
-      console.log(retorno);
     });
   }
 }
